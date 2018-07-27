@@ -1,0 +1,18 @@
+.ico-search {
+    background-image: url(../img/ico_search.png);
+    display: block;
+    width: 28px;
+    height: 28px;
+}
+.ico-sing-in {
+    background-image: url(../img/ico_user.png);
+    display: block;
+    width: 28px;
+    height: 28px;
+}
+.ico-wishlist {
+    background-image: url(../img/ico_wishlist.png);
+    display: block;
+    width: 32px;
+    height: 32px;
+}
