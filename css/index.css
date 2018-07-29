@@ -1,3 +1,192 @@
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
+
+body {
+    font-family: 'Source Sans Pro', sans-serif;
+    margin: 0;
+    background-color: #f1f1f1;
+    display: flex;
+    flex-direction: column;
+}
+a {
+    color: #9e00ff;
+}
+/*header*/
+header {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 80px;
+    box-shadow: 0 3px 4px rgba(178, 52, 255, 0.6);
+    background-color: #ffffff;
+}
+header>div:first-of-type {
+    display: flex;
+    max-width: 1024px;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: space-between;
+}
+header>div:first-of-type>span:last-of-type {
+    display: flex;
+    justify-content: space-between;
+    max-width: 80px;
+    width: 100%;
+    margin-right: 20px;
+}
+header .logo {
+    font-size: 48px;
+    font-weight: 300;
+    margin-left: 20px;
+}
+header .logo>i {
+    color: #b234ff
+}
+.search {
+    display: none;
+}
+
+/*main content*/
+/*left aside*/
+body>section {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1024px;
+    align-self: center;
+    margin: 10px 0;
+}
+body>section>.page {
+    width: 100%;
+}
+@media (min-width: 1024px) {
+    body>section>.page {
+        max-width: 462px;
+    }
+}
+body>section>aside, body>section>.page>div {
+    box-shadow: 0 4px 4px rgba(102, 102, 102, 0.15);
+    background-color: #ffffff;
+    border-radius: 0 0 30px 30px;
+    height: fit-content;
+}
+body>section>aside>ul {
+    list-style-type: none;
+}
+body>section>aside:first-of-type>ul {
+    line-height: 31px;
+    font-size: 18px;
+}
+body>section>aside:first-of-type>ul a {
+    text-decoration: none;
+    color: #000000;
+}
+body>section>aside:first-of-type>ul a:hover {
+    color: #9e00ff;
+}
+body>section>.page>.player {
+    position: relative;
+    z-index: 3;
+}
+body>section>.page>.player h1 {
+    padding: 18px 0;
+    margin: 0;
+    font-size: 24px;
+}
+body>section>aside>h3 {
+    text-align: center;
+    padding: 20px 0;
+    border-bottom: 1px solid #f1f1f1;
+    margin: 0 20px;
+    font-weight: normal;
+    font-size: 20px;
+    color: #666;
+}
+body>section>aside:first-of-type {
+    width: 256px;
+    padding-bottom: 10px;
+}
+body>section>aside:last-of-type {
+    width: 293px;
+    padding-bottom: 10px;
+}
+body>section>aside:last-of-type>ul {
+    padding: 0 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.page>.player>section:first-of-type {
+    border-bottom: 1px solid #f1f1f1;
+}
+.page>.player>section:last-of-type {
+    margin: 20px;
+}
+.page>.player>section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 20px;
+}
+.page>.description {
+    padding: 30px 30px 15px;
+    position: relative;
+    top: -25px;
+    z-index: 2;
+}
+.page>.comments {
+    background-color: #fbfbfb;
+    padding: 47px 30px 35px;
+    position: relative;
+    top: -50px;
+}
+.page>.comments>h3 {
+    margin-top: 0;
+    font-weight: normal;
+    font-size: 20px;
+    color: #666;
+}
+.page>.comments>form>input, .page>.comments>form>textarea {
+    box-shadow: inset 0 4px 4px rgba(153, 153, 153, 0.1);
+    border-radius: 5px;
+    border: 1px solid #d6d6d6;
+    background-color: #ffffff;
+}
+.page>.comments>form>input {
+    height: 35px;
+    width: 60%;
+    padding: 0 10px;
+    box-sizing: border-box;
+    margin: 0 0 7px;
+}
+.page>.comments>form>textarea {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+}
+.page>.comments>form>button {
+    width: 139px;
+    height: 35px;
+    box-shadow: 0 4px 4px rgba(138, 126, 145, 0.53);
+    border-radius: 5px;
+    background-color: #b234ff;
+    color: #fff;
+    border: none;
+    margin-top: 3px;
+}
+footer {
+    width: 100%;
+    height: 60px;
+    box-shadow: 0 -4px 4px rgba(153, 153, 153, 0.15);
+    background-color: #fbfbfb;
+    text-align: center;
+}
+
+button, .ico-search, .ico-sing-in, .ico-wishlist {
+    cursor: pointer;
+}
+
+/*all-ico*/
 .ico-search {
     background-image: url(../img/ico_search.png);
     display: block;

@@ -11,19 +11,21 @@
     <header>
         <div>
             <span class="logo"><i>Get</i>Radio</span>
-            <span class="ico-search"></span>
-            <span class="ico-sing-in"></span>
+            <span>
+                <i class="ico-search"></i>
+                <i class="ico-sing-in"></i>
+            </span>
         </div>
         <div class="search">
             <form method="get">
-                <input type="text" name="search"/>
+                <input type="text" placeholder="" name="search"/>
                 <button>Поиск</button>
             </form>
         </div>
     </header>
     <section>
         <aside>
-            <i>Категории</i>
+            <h3><i>Категории</i></h3>
             <ul>
                 <li><a href="">Новости</a></li>
                 <li><a href="">Разговорные</a></li>
@@ -42,25 +44,25 @@
                 <li><a href="">Религия</a></li>
             </ul>
         </aside>
-        <section>
-            <div>
+        <section class="page">
+            <div class="player">
                 <section>
-                    <h1>Radio Roks</h1>
+                    <h1>Радио Roks</h1>
                     <span class="ico-wishlist"></span>
                 </section>
                 <section>
-                    <img src="img/roks.jpg" alt="radio rock">
-                    <audio src="name.ogg" controls></audio>
+                    <img src="img/roks.jpg" alt="радио rocks">
+                    <audio src="" controls></audio>
                 </section>
             </div>
-            <div>
+            <div class="description">
                 <p>
                     <b>Relax FM</b> - это одна из современных радиостанций совершенно нового поколения, которых никогда не было до этого. Название данной радиостанции говорит само за себя. В эфире можно услышать всевозможные звуки природы, которые понравятся абсолютно каждому. Любой, кто включит 101.ru: Звуки Природы, сможет отыскать что-
 нибудь интересное для себя, какие-нибудь неизвестные раннее мелодии и совершенно новые впечатления.
                 </p>
             </div>
-            <div>
-                <i>Комментарии:</i>
+            <div class="comments">
+                <h3><i>Комментарии:</i></h3>
                 <form method="post">
                     <input type="text" placeholder="Имя" name="user-name"/>
                     <input type="email" placeholder="Email" name="user-email"/>
@@ -70,7 +72,7 @@
             </div>
         </section>
         <aside>
-            <i>Популярные станции</i>
+            <h3><i>Популярные станции</i></h3>
             <ul>
                 <li><a href=""><img src="img/avtoradio.jpg" alt="авто радио"></a></li>
                 <li><a href=""><img src="img/ex.jpg" alt="релакс радио"></a></li>
