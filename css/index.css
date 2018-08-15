@@ -9,6 +9,12 @@ body {
 a {
     color: #9e00ff;
 }
+p {
+    margin-top: 1rem;
+}
+input:active, input:focus, button:focus, button:active, textarea:focus, textarea:active {
+    outline:none;
+}
 /*header*/
 header {
     display: flex;
@@ -129,6 +135,9 @@ body>section>aside:last-of-type {
     body>section>aside:last-of-type {
         width: 293px;
     }
+    body>section>aside:last-of-type img:hover {
+        opacity:0.5;
+    }
 }
 @media (max-width: 1023px) {
     body>section>aside:last-of-type {
@@ -154,6 +163,12 @@ body>section>aside:last-of-type>ul {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+}
+body>section>aside:last-of-type>ul li {
+    padding: 8px;
+}
+dl, ol, ul {
+    margin-top: 1rem;
 }
 .page>.player>section:first-of-type {
     border-bottom: 1px solid #f1f1f1;
@@ -187,7 +202,6 @@ body>section>aside:last-of-type>ul {
 }
 .page>.comments>form>input, .page>.comments>form>textarea {
     box-shadow: inset 0 4px 4px rgba(153, 153, 153, 0.1);
-    border-radius: 5px;
     border: 1px solid #d6d6d6;
     background-color: #ffffff;
 }
@@ -203,15 +217,34 @@ body>section>aside:last-of-type>ul {
     box-sizing: border-box;
     padding: 10px;
 }
-.page>.comments>form>button {
-    width: 139px;
-    height: 35px;
+.page>.comments>form>button, .login-form button {
+    width: 150px;
+    height: 40px;
     box-shadow: 0 4px 4px rgba(138, 126, 145, 0.53);
-    border-radius: 5px;
-    background-color: #b234ff;
-    color: #fff;
+    color: #000;
     border: none;
     margin-top: 3px;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #FFFE28), color-stop(1, #ffe328));
+    background: -moz-linear-gradient(top, #FFFE28 5%, #ffe328 100%);
+    background: -webkit-linear-gradient(top, #FFFE28 5%, #ffe328 100%);
+    background: -o-linear-gradient(top, #FFFE28 5%, #ffe328 100%);
+    background: -ms-linear-gradient(top, #FFFE28 5%, #ffe328 100%);
+    background: linear-gradient(to bottom, #FFFE28 5%, #ffe328 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#cd84fa', endColorstr='#b134ff',GradientType=0);
+    background-color: #ffe328;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 5px;
+}
+.page>.comments>form>button:hover, .login-form button:hover {
+    background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #ffe328), color-stop(1, #FFFE28));
+	background:-moz-linear-gradient(top, #ffe328 5%, #FFFE28 100%);
+	background:-webkit-linear-gradient(top, #ffe328 5%, #FFFE28 100%);
+	background:-o-linear-gradient(top, #ffe328 5%, #FFFE28 100%);
+	background:-ms-linear-gradient(top, #ffe328 5%, #FFFE28 100%);
+	background:linear-gradient(to bottom, #ffe328 5%, #FFFE28 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#b134ff', endColorstr='#FFFE28',GradientType=0);
+	background-color:#ffe328;
 }
 footer {
     width: 100%;
@@ -220,7 +253,7 @@ footer {
     background-color: #fbfbfb;
     text-align: center;
 }
-button, .ico-search, .ico-sing-in, .ico-wishlist {
+button, .ico-search, .ico-sing-in, .ico-wishlist, .ico-menu, .ico-play, .ico-pause, .ico-muted-of, .ico-muted-on, .ico-reset-search-form, .ico-wishlist-active {
     cursor: pointer;
 }
 /*all-ico*/
@@ -229,6 +262,21 @@ button, .ico-search, .ico-sing-in, .ico-wishlist {
     display: block;
     width: 28px;
     height: 28px;
+}
+.ico-search-white {
+    background-image: url(../img/ico_search_white.png)!important;
+}
+.ico-reset-search-form {
+    background: url(../img/ico-reset-search-form.png) center;
+    display: block;
+    width: 36px;
+    height: 36px;
+    position: absolute;
+    right: 90px;
+    opacity: 0.3;
+}
+.ico-reset-search-form:hover {
+    opacity: 0.8;
 }
 .ico-sing-in {
     background-image: url(../img/ico_user.png);
@@ -242,16 +290,63 @@ button, .ico-search, .ico-sing-in, .ico-wishlist {
     width: 32px;
     height: 32px;
 }
+.ico-wishlist-active {
+    background: url(../img/ico_wishlist_fill.png)!important;
+    display: block;
+    width: 32px;
+    height: 32px;
+}
 .ico-menu {
     background: url(../img/ico_menu.png) center;
     display: block;
     width: 28px;
     height: 28px;
 }
+.ico-play {
+    background: #FFFE28 url(../img/ico_play.png) center;
+    display: block;
+    width: 82px;
+    height: 82px;
+    border-radius: 50%;
+}
+.ico-pause {
+    background: #f1f1f1 url(../img/ico_pause.png) center;
+    display: none;
+    width: 82px;
+    height: 82px;
+    border-radius: 50%;
+}
+.ico-muted {
+    display: block;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+.ico-muted-on {
+    background: url(../img/ico_muted_on.png) center;
+}
+.ico-muted-of {
+    background: #FFFE28 url(../img/ico_muted_of.png) center;
+}
+.ico-modal-hide {
+    background: url(../img/ico-reset-search-form.png) center;
+    display: block;
+    width: 28px;
+    height: 30px;
+    opacity: 0.4;
+}
+.ico-modal-hide:hover {
+    opacity: 0.8;
+}
 @media (min-width: 1024px) {
     .ico-menu {
         display: none!important;
     }
+}
+.time {
+    font-style: normal;
+    color: #B434FF;
+    cursor: default;
 }
 
 /*Search*/
@@ -261,43 +356,135 @@ button, .ico-search, .ico-sing-in, .ico-wishlist {
 .search {
     right: 0;
     position: absolute;
+    animation-duration: 0.2s;
+    animation-name: search-slidein;
+}
+.search form{
+    display: flex;
+    align-items: center;
+}
+.search button {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 80px;
+    height: 100%;
+    border: none;
+    display: flex;
+    justify-content: center;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #cf81ff), color-stop(1, #b234ff));
+    background: -moz-linear-gradient(top, #FFFE28 5%, #ffe328 100%);
+    background: -webkit-linear-gradient(top, #cf81ff 5%, #b234ff 100%);
+    background: -o-linear-gradient(top, #FFFE28 5%, #ffe328 100%);
+    background: -ms-linear-gradient(top, #FFFE28 5%, #ffe328 100%);
+    background: linear-gradient(to bottom, #cf81ff 5%, #b234ff 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#cd84fa', endColorstr='#b134ff',GradientType=0);
+    background-color: #b234ff;
 }
 @media (min-width: 1024px) {
     .search {
          width: 762px;
+    }
+    @keyframes search-slidein {
+        from {
+            width: 0%; 
+        }
+        to {
+            width: 74%;
+        }
+    }
+    .search form input {
+        height: 50px;
     }
 }
 @media (max-width: 1023px) {
     .search {
          width: 100%;
     }
+    @keyframes search-slidein {
+        from {
+            width: 0%; 
+        }
+        to {
+            width: 100%;
+        }
+    }
+    .search form input {
+        height: 80px;
+    }
 }
 .search form {
     position: relative;
-    height: 50px;
     -webkit-transition: width 0.3s;
     -moz-transition: width 0.3s;
     -ms-transition: width 0.3s;
     -o-transition: width 0.3s;
     transition: width 0.3s;
 }
-.search form input{
+.search form input {
     width: 100%;
     padding: 0 20px;
     box-sizing: border-box;
     outline: 0;
     box-shadow: inset 0 4px 4px rgba(153, 153, 153, 0.1);
-    border-radius: 5px;
     border: 1px solid #d6d6d6;
     background-color: #ffffff;
-    height: 50px;
     margin: 0;
     font-size: 20px;
 }
 
-/*if search active*/
-.ico-search-active {
-    z-index: 1;
-    position: absolute;
-    right: -8px;
+/*burger menu*/
+.navbar-collapse {
+    background: #f1f1f1;
+    padding: 30px;
+}
+.navbar-nav a {
+    background: #fff;
+    width: 100%;
+    height: 100%;
+    display: block;
+    padding: 15px 20px;
+    margin: 3px 0;
+    color: #000;
+    text-decoration: none;
+}
+.navbar-nav a:active {
+    background: #fffe28;
+}
+/*sing in*/
+.close {
+    float: right;
+    font-size: 50px;
+    font-weight: normal;
+    line-height: 0.5;
+    color: #000;
+    text-shadow: none;
+    opacity: .5;
+}
+.modal-content {
+    border: none;
+    border-radius: 0px;
+}
+.modal-body {
+    padding: 24px 35px 30px;
+}
+.modal-header {
+    padding: 15px 20px 15px 25px;
+}
+.login-form button {
+    margin-top: 16px;
+}
+.login-form input {
+    height: 45px;
+    width: 100%;
+    padding: 0 10px;
+    box-sizing: border-box;
+    margin: 10px 0;
+    box-shadow: inset 0 4px 4px rgba(153, 153, 153, 0.1);
+    border: 1px solid #d6d6d6;
+    background-color: #ffffff;
+}
+.modal-dialog {
+    max-width: 420px;
+    margin: 2rem auto;
 }

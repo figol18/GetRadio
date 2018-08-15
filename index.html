@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" 
-        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="css/index.css" type="text/css" />
     <title>Онлайн Радио - Прямой эфир лучших радиостанций</title>
 </head>
+
 <body>
     <header>
         <div>
@@ -19,13 +20,13 @@
                 <i data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation" class="ico-menu"></i>
             </span>
-            
-            <div id="search-form" class="search search-hide">
+            <div id="search-form" class="search-hide">
                 <form method="get">
-                    <input type="text" placeholder="" name="search"/>
+                    <input type="text" placeholder="Поиск..." name="search" />
+                    <i id="reset-search-form" class="ico-reset-search-form"></i>
+                    <button id="search-button"><i class="ico-search ico-search-white"></i></button>
                 </form>
             </div>
-            
         </div>
     </header>
     <!-- Burger menu -->
@@ -74,24 +75,30 @@
             <div class="player">
                 <section>
                     <h1>Радио Roks</h1>
-                    <span class="ico-wishlist"></span>
+                    <span id="wishlist" class="ico-wishlist"></span>
                 </section>
                 <section>
                     <img src="img/roks.jpg" alt="радио rocks">
-                    <audio src="" controls></audio>
+                    <audio id="player" src="http://online-radioroks.tavrmedia.ua/RadioROKS"></audio>
+                    
+                        <i id="start" class="ico-play"></i>
+                        <i id="pause" class="ico-pause"></i>
+                        <i id="time" class='time'>00:00:00</i>
+                        <i id='muted' class="ico-muted ico-muted-on"></i>
+                    
                 </section>
             </div>
             <div class="description">
                 <p>
-                    <b>Relax FM</b> - это одна из современных радиостанций совершенно нового поколения, которых никогда не было до этого. Название данной радиостанции говорит само за себя. В эфире можно услышать всевозможные звуки природы, которые понравятся абсолютно каждому. Любой, кто включит 101.ru: Звуки Природы, сможет отыскать что-
-нибудь интересное для себя, какие-нибудь неизвестные раннее мелодии и совершенно новые впечатления.
+                    <b>Relax FM</b> - это одна из современных радиостанций совершенно нового поколения, которых никогда не было до этого. Название данной радиостанции говорит само за себя. В эфире можно услышать всевозможные звуки природы, которые понравятся
+                    абсолютно каждому. Любой, кто включит 101.ru: Звуки Природы, сможет отыскать что- нибудь интересное для себя, какие-нибудь неизвестные раннее мелодии и совершенно новые впечатления.
                 </p>
             </div>
             <div class="comments">
                 <h3><i>Комментарии:</i></h3>
-                <form method="post">
-                    <input type="text" placeholder="Имя" name="user-name"/>
-                    <input type="email" placeholder="Email" name="user-email"/>
+                <form method="post" action="https://formspree.io/figol_st@ukr.net">
+                    <input type="text" placeholder="Имя" name="user-name" />
+                    <input type="email" placeholder="Email" name="user-email" />
                     <textarea rows="10" cols="45" placeholder="Сообщение..." name="user-text"></textarea>
                     <button>Отправить</button>
                 </form>
@@ -118,40 +125,36 @@
         </aside>
     </section>
     <footer>
-        <p>©  GetRadio 2018   |   Обратная связь: <a href="mailto:info@tv-radio.online">info@tv-radio.online</a></p>
+        <p>© GetRadio 2018 | Обратная связь: <a href="mailto:info@get-radio.ru">info@get-radio.ru</a></p>
     </footer>
 
 
     <!-- Modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Вход</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span class='ico-modal-hide' aria-hidden="true"></span>
             </button>
-          </div>
-          <div class="modal-body">
-            ...
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Save changes</button>
-          </div>
+                </div>
+                <div class="modal-body">
+                    <form method="post" class="login-form" action="https://formspree.io/figol_st@ukr.net">
+                        <input autocomplete="on" type="email" placeholder="Email" name="user-email" />
+                        <input data-toggle="collapse" type="password" placeholder="Пароль" name="user-password" />
+                        <button>Войти</button>
+                    </form>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-    
+
     <!--js-->
-    <script
-      src="https://code.jquery.com/jquery-3.3.1.min.js"
-      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-      crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" 
-        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" 
-        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
     <script type="text/javascript" src="js/index.js"></script>
 </body>
+
 </html>
