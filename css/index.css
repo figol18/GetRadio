@@ -63,6 +63,17 @@ header .logo>a>i {
     color: #b234ff;
 }
 
+@media (max-width: 500px) {
+    header .logo>a .des {
+        display: none;
+    }
+}
+@media (min-width: 501px) {
+    header .logo>a .mob {
+        display: none;
+    }
+}
+
 /*main content*/
 body>section {
     display: flex;
@@ -372,13 +383,6 @@ button, .ico-search, .ico-sing-in, .ico-wishlist, .ico-menu, .ico-play, .ico-pau
     border: none;
     display: flex;
     justify-content: center;
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #cf81ff), color-stop(1, #b234ff));
-    background: -moz-linear-gradient(top, #FFFE28 5%, #ffe328 100%);
-    background: -webkit-linear-gradient(top, #cf81ff 5%, #b234ff 100%);
-    background: -o-linear-gradient(top, #FFFE28 5%, #ffe328 100%);
-    background: -ms-linear-gradient(top, #FFFE28 5%, #ffe328 100%);
-    background: linear-gradient(to bottom, #cf81ff 5%, #b234ff 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#cd84fa', endColorstr='#b134ff',GradientType=0);
     background-color: #b234ff;
 }
 @media (min-width: 1024px) {
@@ -450,6 +454,9 @@ button, .ico-search, .ico-sing-in, .ico-wishlist, .ico-menu, .ico-play, .ico-pau
 }
 .navbar-nav a:active {
     background: #fffe28;
+}
+.navbar-nav {
+    margin-top: 5px;
 }
 /*sing in*/
 .close {
