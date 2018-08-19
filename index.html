@@ -52,7 +52,7 @@
     <!-- Burger menu -->
     <section>
         <aside>
-            <h3><i>Категории</i></h3>
+            <h3>Категории</h3>
             <ul>
                 <li><a href="">Новости</a></li>
                 <li><a href="">Разговорные</a></li>
@@ -80,12 +80,12 @@
                 <section>
                     <img src="img/roks.jpg" alt="радио rocks">
                     <audio id="player" src="http://online-radioroks.tavrmedia.ua/RadioROKS"></audio>
-                    
-                        <i id="start" class="ico-play"></i>
-                        <i id="pause" class="ico-pause"></i>
-                        <i id="time" class='time'>00:00:00</i>
-                        <i id='muted' class="ico-muted ico-muted-on"></i>
-                    
+                    <i id="start" class="ico-play"></i>
+                    <i id="pause" class="ico-pause"></i>
+                    <div class="mut-vol">
+                        <i id="muted" class="ico-muted ico-muted-on"></i>
+                        <input  id="volume" type="range" min="0" max="1" step="0.1" value="1" oninput="changeVolume()" />
+                    </div>
                 </section>
             </div>
             <div class="description">
@@ -95,7 +95,7 @@
                 </p>
             </div>
             <div class="comments">
-                <h3><i>Комментарии:</i></h3>
+                <h3>Комментарии:</h3>
                 <form method="post" action="https://formspree.io/figol_st@ukr.net">
                     <input type="text" placeholder="Имя" name="user-name" />
                     <input type="email" placeholder="Email" name="user-email" />
@@ -105,7 +105,7 @@
             </div>
         </section>
         <aside>
-            <h3><i>Популярные станции</i></h3>
+            <h3>Популярные станции</h3>
             <ul>
                 <li><a href=""><img src="img/avtoradio.jpg" alt="авто радио"></a></li>
                 <li><a href=""><img src="img/ex.jpg" alt="релакс радио"></a></li>

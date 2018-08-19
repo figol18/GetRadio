@@ -38,46 +38,33 @@ $('#pause').mousedown( function() {
 //Audio player - muted on/of
 $('#muted').mousedown( function () {
     let correntVolume = $('#player').prop('volume');
-    if (correntVolume === 1) {
+    let rangeVolume = document.querySelector('#volume');
+    if (correntVolume > 0) {
         $('#player').prop('volume', 0);
         $(this).removeClass('ico-muted-on');
         $(this).addClass('ico-muted-of');
+        rangeVolume.value = 0;
     } else {
         $('#player').prop('volume', 1);
         $(this).removeClass('ico-muted-of');
         $(this).addClass('ico-muted-on');
+        rangeVolume.value = 1;
     }
 });
 
-//Audio player - timer audio
-function myTimer () {
-    let separator = ':';
-    let countSecMin = 60;
-    let z = function (x) {
-        return (((x < 10) ? '0' : '') + x);
-    };
-    let timer = document.querySelector('#time');
-    let timesInSec = timer.innerHTML.split (separator);
-    let t = parseInt (timesInSec[0]) * countSecMin * countSecMin + parseInt (timesInSec[1]) * countSecMin + parseInt (timesInSec[2]) + 1;
-    timer.innerHTML = [z (Math.floor (t / countSecMin / countSecMin)),
-                       z (Math.floor (t % (countSecMin * countSecMin) / countSecMin)), 
-                       z (t % (countSecMin * countSecMin) % countSecMin)].join(separator);
-    timer.wrk = setTimeout (myTimer, 1000);
+// Audio - volume
+function changeVolume() {
+    let rangeValue = document.querySelector('#volume').value;
+    let player = document.querySelector('#player');
+    player.volume = rangeValue;
+    if (player.volume === 0) {
+        $('#muted').removeClass('ico-muted-on');
+        $('#muted').addClass('ico-muted-of');
+    } else if(player.volume != 0 && $('#muted').hasClass('ico-muted-of') ) {
+        $('#muted').removeClass('ico-muted-of');
+        $('#muted').addClass('ico-muted-on');
+    }
 }
-$('#start').mousedown(function () {
-    let timer = document.querySelector('#time');
-    if (!timer.wrk) {
-        timer.innerHTML = '00:00:00';
-        timer.wrk = setTimeout (myTimer, 1000);
-    }
-});
-$('#pause').mousedown(function() {
-    let timer = document.querySelector('#time');
-    if (timer.wrk) {
-        clearTimeout (timer.wrk); 
-        timer.wrk = 0;
-    }
-});
 
 //wishlist add/remove
 $('#wishlist').mousedown( function(){
